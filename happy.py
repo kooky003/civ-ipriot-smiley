@@ -43,6 +43,7 @@ class Happy(Smiley, Blinkable):
 
         :param delay: Delay in seconds
         """
+
         self.draw_eyes(wide_open=False)
         self.show()
         time.sleep(delay)
