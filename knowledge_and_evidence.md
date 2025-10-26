@@ -75,33 +75,35 @@ python3 main.py
 
 2. Explain the concept of 'abstraction' as demonstrated in this project. (Max 150 words)
 
-> Your answer here
+> Abstraction to me, is hiding things behind other things. Especially apparent in this project when at the base you have the smiley, which most of the other classes are based on, (then tweaked on). Main.py has the simplest code. So you could say it's the "tip of the iceberg".
+
 
 3. What is the name of the process of deriving from base classes? What is its purpose in this project? (Max 150 words)
 
-> Your answer here
+> I think its polymorphism. The purpose of polymorphism in this project, is where the other classes derived from the base class smiley, to make something else.
 
 ### Compare and contrast classes
 
 Compare and contrast the classes Happy and Sad.
 
 1. What is a key difference between the two classes?
-   > Your answer here
+   > The blinkable class
 2. What are the key similarities?
-   > Your answer here
+   > all the functions are pretty much the same
 3. What difference stands out the most to you and why?
-   > Your answer here
+   > Just the blinkable class. Because the sad class doesn't have it.
 4. How do these differences affect the functionality of these classes
-   > Your answer here
+   > The happy class blinks but the sad class doesn't
 
 ### Where is the Sense(Hat) in the code?
 
 1. Which class(s) utilize the functionality of the SenseHat?
-   > Your answer here
+   > All of the classes in one way or another uses the SenseHat class, because that's where all the pixels are derived from. But polymorphed in different ways.
 2. Which of these classes directly interact with the SenseHat functionalities?
-   > Your answer here
+   > The smiley class is the only class to directly inherit from the SenseHat, which uses the pixels and makes a smiley.
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
-   > Your answer here
+   > The hiding of the SenseHAT, is shown as it's so from away from main.py. Which is where we run the code from. From main.py you have happy.py, then smiley, which leads eventually to sense_hat. So 2 classes between main.py and the sensehat.
+
 
 ### Sad Smileys Can’t Blink (Or Can They?)
 
@@ -109,15 +111,20 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 1. **Understanding Blink Mechanism:** In your own words, explain how the `blink()` method enables the Happy smiley to blink. What role does the argument play in this method?
 
-> Your answer here
+> The blink method works in that, it draws the eyes with the parameter of "wide_open" = false to show its colour. Time.sleep which delays it for the amount of time specified than wide_open = true, which shows "BLANK" which takes on the appearance of eyes
+> So the eyes close for a second than there is a delay then they re-open
 
 2. **Implement Blink in Sad Class:**
 
    - Create a new method called `blink` within the Sad class. Ensure you use the same method signature as in the Happy class:
 
    ```python
-   def blink(self, delay=0.25):
-       pass  # Replace 'pass' with your implementation
+     def blink(self, delay=1.25):
+        self.draw_eyes(wide_open=False)
+        self.show()
+        time.sleep(delay)
+        self.draw_eyes(wide_open=True)
+        self.show()
    ```
 
 3. **Code Implementation:** Implement the code that allows the Sad smiley to blink. Use the implementation from the Happy smiley as a reference. Ensure your new method functions similarly by controlling the blink duration through the `delay` argument.
@@ -128,11 +135,11 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 Include a screenshot of the sad smiley or the modified `main.py`:
 
-![Sad Smiley Blinking](screenshots/sad_blinking.png)
+!![img.png](screenshots/sadsmiley1.png)[img.png]
 
 - Observe and document the Sad smiley as it blinks its eyes. Describe any adjustments or issues encountered during implementation.
 
-  > Your answer here
+  > I had to re-adjust the delay to make the sad smiley blink longer, because I thought it looked better 
 
   ### If It Walks Like a Duck…
 
@@ -140,23 +147,23 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   1. **Class Type Analysis:** What kind of class is `Blinkable`? Inspect its superclass for clues about its classification.
 
-     > Your answer here
+     > A helper class or metaclass
 
   2. **Class Implementation:** `Blinkable` is a class intended to be implemented by other classes. What generic term describes this kind of class, which is designed for implementation by others? **Clue**: Notice the lack of any concrete implementation and the naming convention.
 
-  > Your answer here
+  > An abstract base class or an interface
 
   3. **OO Principle Identification:** Referring to your answer in question (2), which Object-Oriented (OO) principle does this represent? Choose from the following and justify your answer in 1-2 sentences: Abstraction, Polymorphism, Inheritance, Encapsulation.
 
-  > Your answer here
+  > Can just about be all of them, but Polymorphism, since with an abstract base class you can rework the class however each way you need it in a subclass.
 
   4. **Implementation Flexibility:** Explain why you were able to grant the Sad Smiley a blinking feature similar to the Happy Smiley's implementation, even without directly using `Blinkable`.
 
-  > Your answer here
+  > Because the happy.py subclass had already implemented it, and it didn't need to be reimplemented.
 
   5. **Concept and Language Specificity:** In relation to your response to question (4), what is this capability known as, and why is it feasible in Python and many other dynamically typed languages but not in most statically typed programming languages like C#? **Clue** This concept is hinted at in the title of this section.
 
-  > Your answer here
+  > Because python uses duck typing, You can interface inheritance more loosely than C#. So you did not have to implement blinkable class.
 
   ***
 
@@ -169,19 +176,20 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   1. **Defined Colors and Their Location:**
 
      1. Which colors are defined and in which class(s)?
-        > Your answer here
+        > RGB is defined in the sensehat, while more specifically white, green, red, yellow, blank and blue are defined in the smiley class
      2. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
-        > Your answer here
+        > Tuples are the variables that hold these colours. The values are expected to change, because when the smiley blinks the colour changes from blank to complexion = smiley colour.
      3. Add the color blue to the appropriate class using the appropriate format and values.
+        ![img.png](sad blue.png)
 
   2. **Usage of Color Variables:**
 
      1. In which classes are the color variables used?
-        > Your answer here
+        > Happy and sad
 
   3. **Simple Method to Change Colors:**
   4. What is the easiest way you can think to change the smileys to green? Easiest, not necessarily the best!
-     > Your answer here
+     
 
   Here's a revised version of the "Flexible Colors – Step 1" section for the smiley project, incorporating your specifications for formatting and content updates:
 

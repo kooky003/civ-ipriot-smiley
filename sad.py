@@ -26,7 +26,7 @@ class Sad(Smiley):
         for pixel in eyes:
             self.pixels[pixel] = self.BLANK if wide_open else self.complexion()
 
-    def blink(self, delay=0.25):
+    def blink(self, delay=1.25):
         self.draw_eyes(wide_open=False)
         self.show()
         time.sleep(delay)
