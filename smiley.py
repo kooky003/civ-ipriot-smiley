@@ -13,7 +13,7 @@ class Smiley:
         # We have encapsulated the SenseHat object
         self.sense_hat = SenseHat()
 
-        Y = complexion
+        X = complexion
         O = self.BLANK
         self.my_complexion = complexion
         self.pixels = [

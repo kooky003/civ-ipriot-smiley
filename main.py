@@ -15,8 +15,8 @@ if __name__ == '__main__':
     ############################################################
 
     # Create a happy smiley, which is a subclass of Smiley
-    #smiley = Happy()
-    smiley = Sad()
+    smiley = Happy()
+    #smiley = Sad()
     #smiley = Angry()
     # This is a form of #polymorphism, as the Happy smiley class
     # does not have a method called .show(). This means that

@@ -180,15 +180,17 @@ Include a screenshot of the sad smiley or the modified `main.py`:
      2. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
         > Tuples are the variables that hold these colours. The values are expected to change, because when the smiley blinks the colour changes from blank to complexion = smiley colour.
      3. Add the color blue to the appropriate class using the appropriate format and values.
-        ![img.png](sad blue.png)
+        
 
   2. **Usage of Color Variables:**
 
      1. In which classes are the color variables used?
-        > Happy and sad
+        > Happy, sad and smiley
 
   3. **Simple Method to Change Colors:**
   4. What is the easiest way you can think to change the smileys to green? Easiest, not necessarily the best!
+  
+To change the colour in smiley's init method as well as the blink method
      
 
   Here's a revised version of the "Flexible Colors – Step 1" section for the smiley project, incorporating your specifications for formatting and content updates:
@@ -219,7 +221,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   4. **Bulk rename:** We want to update our grid to use the value of complexion, but we have so many `Y`'s in the grid. Use your IDE's refactor tool to rename all instances of the **symbol** `Y` to `X`. Where `X` is the value of the `complexion` variable. Include a screenshot evidencing you have found the correct refactor tool and the changes made.
 
-  ![Bulk Rename](screenshots/bulk_rename.png)
+  ![img.png](screenshots/refactor.png)
 
   5. **Update the `complexion` method:** Adjust this method to return `self.my_complexion`, ensuring that whatever color is assigned during instantiation is what the smiley displays.
 
