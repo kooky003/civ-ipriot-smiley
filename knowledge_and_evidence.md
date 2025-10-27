@@ -103,6 +103,9 @@ Compare and contrast the classes Happy and Sad.
    > The smiley class is the only class to directly inherit from the SenseHat, which uses the pixels and makes a smiley.
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
    > The hiding of the SenseHAT, is shown as it's so from away from main.py. Which is where we run the code from. From main.py you have happy.py, then smiley, which leads eventually to sense_hat. So 2 classes between main.py and the sensehat.
+>  In a coding sense the SenseHAT is only used in the smiley class, which is then used by the other classes to which then is run in main.
+> This can help with improved security if needed, plus improved reusability as you could probably draw other things with the senseHAT.
+> This also makes the code easier to read, as the project is not in one big block of code.
 
 
 ### Sad Smileys Can’t Blink (Or Can They?)
